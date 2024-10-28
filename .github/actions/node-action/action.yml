@@ -1,0 +1,17 @@
+name: Repro
+description: Repro
+runs:
+  using: composite
+  steps:
+    - name: Setup Node 20.18
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.18.0
+
+    - name: Node not setting up properly
+      shell: bash
+      run: which node
+
+    - name: failure
+      shell: bash
+      run: exit 1
